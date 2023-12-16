@@ -20,10 +20,13 @@
   background-image: url("https://static01.nyt.com/images/2023/10/13/multimedia/12shamallah-cwfk/12shamallah-cwfk-superJumbo-v2.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
   margin: 0; /* Remove margin to cover the entire viewport */
   font-family: 'Arial', sans-serif;
   height: 100vh;
+  z-index: 1500;
+  padding: 0;
   /* Adjust other styles as needed */
 }
 
@@ -54,4 +57,24 @@
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+}
+
+footer {
+  background-color: rgba(51, 51, 51, 0)fff; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  width: 100%; /* Set width to 100% */
+  max-width: 1000px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the footer horizontally */
+  box-sizing: border-box;
+}
+.text-body-secondary {
+  --bs-text-opacity: 1;
+  color: rgb(255 255 255 / 75%)!important;
 }

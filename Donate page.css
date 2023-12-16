@@ -59,4 +59,23 @@ body {
 .needs-validation {
   justify-content: center;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+}
 
+footer {
+  background-color: rgba(51, 51, 51, 0)fff; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  width: 100%; /* Set width to 100% */
+  max-width: 1000px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the footer horizontally */
+  box-sizing: border-box;
+}
+
+.text-body-secondary {
+  --bs-text-opacity: 1;
+  color: rgb(255 255 255 / 75%)!important;
+}
