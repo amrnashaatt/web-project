@@ -17,6 +17,7 @@
  */
 
  body {
+<<<<<<< Updated upstream
   background-image: url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fmove2turkey.com%2Fwp-content%2Fuploads%2F2021%2F07%2FGaza...a-childrens-bike-race-to-demand-an-end-to-arming-Israel.jpg&tbnid=_5ZhaoK9e1VmFM&vet=12ahUKEwizjdPYvpaDAxUcsCcCHeR4DgIQMygIegQIARBX..i&imgrefurl=https%3A%2F%2Fmove2turkey.com%2Fgaza-a-childrens-bike-race-to-demand-an-end-to-arming-israel%2F&docid=lfz3G55Wlk5r_M&w=935&h=530&q=Gaza%20good%20quality%20images%20for%20happy%20kids&ved=2ahUKEwizjdPYvpaDAxUcsCcCHeR4DgIQMygIegQIARBX");
   background-size: cover;
   background-position: center;
@@ -24,7 +25,21 @@
   margin: 0; /* Remove margin to cover the entire viewport */
   font-family: 'Arial', sans-serif;
   height: 100vh;
+=======
+  background-image: url("https://www.palestinercs.org//public/files/image/2023/News/032023/23032023/279481006_5263248300404761_1485284859889548306_n.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Fixed background */
+    margin: 0; /* Remove margin to cover the entire viewport */
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    z-index: 1500;
+>>>>>>> Stashed changes
   /* Adjust other styles as needed */
+    margin: 0;
+    padding: 0;
+  
 }
 
 
@@ -54,4 +69,50 @@
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.banner {
+  background-color: rgba(42, 40, 40, 0.851); /* Set your desired background color */
+  color: #ffffff; /* Set your desired text color */
+  padding: 15px;
+  justify-content: left;
+}
+
+h1 {
+  font-size: 3.5em;
+  -webkit-text-stroke: 0.5px #000000; /* Add text stroke for WebKit browsers */
+  stroke: 0.5px #000000; /* Add text stroke for other browsers */
+}
+
+.lead {
+  font-size: 2em;
+  line-height: 1.6;
+  -webkit-text-stroke: 0.5px #000000; /* Add text stroke for WebKit browsers */
+  stroke: 0.5px #000000; /* Add text stroke for other browsers */
+}
+.sidebar {
+
+  font-size: 1.5em;
+  -webkit-text-stroke: 0.5px #000000; /* Add text stroke for WebKit browsers */
+  stroke: 0.5px #000000; /* Add text stroke for other browsers */
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+}
+
+footer {
+  background-color: rgba(51, 51, 51, 0)fff; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  width: 100%; /* Set width to 100% */
+  max-width: 1000px; /* Set a maximum width if needed */
+  margin: 0 auto; /* Center the footer horizontally */
+  box-sizing: border-box;
+}
+.text-body-secondary {
+  --bs-text-opacity: 1;
+  color: rgb(255 255 255 / 75%)!important;
 }
