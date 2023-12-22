@@ -189,10 +189,46 @@
           Remember me
         </label>
       </div>
-      <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
     </form>
   </main>
+
+  <script>
+    // Function to show the thank you banner
+    function showThankYouBanner() {
+        // Create a new div element for the banner
+        var bannerDiv = document.createElement("div");
+        bannerDiv.className = "alert alert-success mt-3";
+        bannerDiv.setAttribute("role", "alert");
+        bannerDiv.innerHTML = "<strong>Thank you for choosing us!</strong> We appreciate your support.";
+
+        // Insert the banner after the form
+        var form = document.querySelector("main form");
+        form.parentNode.insertBefore(bannerDiv, form.nextSibling);
+    }
+
+    // Function to handle the form submission
+    function handleFormSubmission(event) {
+        event.preventDefault(); // Prevent the form from submitting (for demonstration purposes)
+
+        // Your form submission logic goes here
+
+        // Show the thank you banner
+        showThankYouBanner();
+    }
+</script>
+</head>
+<body class="d-flex h-100 text-center text-bg-dark">
+<!-- Your existing body content here -->
+
+<main class="form-signin w-100 m-auto">
+    <form onsubmit="handleFormSubmission(event);">
+        <!-- Your existing form content here -->
+
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign up</button>
+    </form>
+</main>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <div class="container-banner">
