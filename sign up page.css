@@ -17,7 +17,7 @@
  */
 
  body {
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.yesmagazine.org%2Fsocial-justice%2F2014%2F07%2F30%2F13-peacebuilders-in-gaza&psig=AOvVaw1JlSS-O_N33lVlENBgwi6j&ust=1702908981410000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIComsTWloMDFQAAAAAdAAAAABAD");
+  background-image: url("https://media.istockphoto.com/id/956063430/photo/dome-of-the-rock-with-birds-flying-in-jerusalem.jpg?s=612x612&w=0&k=20&c=JqVGu11ry1yRmZ_iA1MA0ZsR22GelUxZxAgE4I5F7Pc=");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
@@ -55,4 +55,7 @@
   color: #fff;
   border-bottom-color: #fff;
 }
-
+.text-body-secondary {
+  --bs-text-opacity: 1;
+  color: rgb(255 255 255 / 75%)!important;
+}
