@@ -1,6 +1,6 @@
 <?php
 // Assuming you have a MySQL database connection
-$host = "127.0.0.1";
+$host = "localhost";
 $username = "root";
 $password = "";
 $database = "xampp";
