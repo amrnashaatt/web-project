@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
-    <title>sign-up page</title>
+    <title>sign-in as an admin page</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
 
@@ -98,7 +98,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="sign up page.css" rel="stylesheet">
+    <link href="sign in admin.css" rel="stylesheet">
   </head>
   <body class="d-flex h-100 text-center text-bg-dark">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -155,7 +155,7 @@
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
-    <div>
+    <div class= "change-color">
       <h3 class="float-md-start mb-0">Gaza-donation</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="home page.html">Home</a>
@@ -163,13 +163,12 @@
         <a class="nav-link fw-bold py-1 px-0" href="information page.html">Information</a>
         <a class="nav-link fw-bold py-1 px-0" href="volunteer page.html">Volunteer</a>
         <a class="nav-link fw-bold py-1 px-0" href="sign in admin.html"> admin </a>
-        
       </nav>
     </div>
   </header>
   <main class="form-signin w-100 m-auto">
     <form>
-      <h1 class="h3 mb-3 fw-normal">Please sign up as a volunteer below</h1>
+      <h1 class="h3 mb-3 fw-normal"> sign in as an admin </h1>
   
       <div class="form-floating">
         <input type="Full name" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -194,30 +193,7 @@
     </form>
   </main>
 
-  <script>
-    // Function to show the thank you banner
-    function showThankYouBanner() {
-        // Create a new div element for the banner
-        var bannerDiv = document.createElement("div");
-        bannerDiv.className = "alert alert-success mt-3";
-        bannerDiv.setAttribute("role", "alert");
-        bannerDiv.innerHTML = "<strong>Thank you for signing up up!</strong> We appreciate your support.";
 
-        // Insert the banner after the form
-        var form = document.querySelector("main form");
-        form.parentNode.insertBefore(bannerDiv, form.nextSibling);
-    }
-
-    // Function to handle the form submission
-    function handleFormSubmission(event) {
-        event.preventDefault(); // Prevent the form from submitting (for demonstration purposes)
-
-        // Your form submission logic goes here
-
-        // Show the thank you banner
-        showThankYouBanner();
-    }
-</script>
 </head>
 <body class="d-flex h-100 text-center text-bg-dark">
 <!-- Your existing body content here -->
@@ -226,7 +202,7 @@
     <form onsubmit="handleFormSubmission(event);">
         <!-- Your existing form content here -->
 
-        <button class="btn btn-primary w-100 py-2" type="submit">Sign up</button>
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
     </form>
 </main>
   
