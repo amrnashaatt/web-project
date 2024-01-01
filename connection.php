@@ -1,16 +1,19 @@
 <?php
 // Assuming you have a MySQL database connection
+$servername = "127.0.0.1";
 $host = "localhost";
 $username = "root";
 $password = "";
 $database = "gaza donation";
 
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = mysqli_connect($servername,$host, $username, $password, $database);
 
 // Check the connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+
 
 // Retrieve form data
 $name = $_POST['name'];
