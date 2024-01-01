@@ -1,3 +1,36 @@
+<?php
+include 'config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+    $email = $_POST['email'];
+    
+
+    // Sanitize the input values to prevent SQL injection
+    
+    $email = mysqli_real_escape_string($conn, $email);
+
+    // Hash the password for security (you should use a proper hashing algorithm)
+    
+
+    $sql = "INSERT INTO volunteers ( email) VALUES ( '$email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+<!-- The rest of your HTML code remains unchanged -->
+
+
+
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
   <head><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

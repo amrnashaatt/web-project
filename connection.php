@@ -1,6 +1,5 @@
 <?php
 // Assuming you have a MySQL database connection
-$servername = "127.0.0.1";
 $host = "localhost";
 $username = "root";
 $password = "";
@@ -20,8 +19,8 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 
 // Insert data into the database
-$sql = "INSERT INTO `donationform`(`id`, `first_name`, `last_name`, `email`, `address`, `address2`, `country`) 
-VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')";
+$sql = "INSERT INTO `donationform`(`id`, `first_name`, `last_name`, `email`, `address`, `address2`, `country`,`Zip`) 
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8])'";
 if (mysqli_query($conn, $sql)) {
     echo "Record inserted successfully";
 } else {
