@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
@@ -205,7 +205,7 @@ $conn->close();
     <form onsubmit="handleFormSubmission(event);">
         <h1 class="h3 mb-3 fw-normal">Please register as a volunteer below</h1>
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+            <input type name ="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
             <label for="floatingEmail">Email address</label>
         </div>
 
