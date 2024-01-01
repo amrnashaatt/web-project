@@ -198,7 +198,7 @@
             </div>
             <div class="col-md-7 col-lg-8">
               <h4 class="mb-3">Billing address</h4>
-              <form class="needs-validation" novalidate>
+              <form id="donate-form" class="needs-validation" novalidate>
                 <div class="row g-3">
                   <div class="col-sm-6">
                     <label for="firstName" class="form-label">First name</label>
@@ -580,6 +580,25 @@
           </div>
           
         </main>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const donateForm = document.getElementById('donate-form');
+            const thankYouBanner = document.createElement('div');
+            thankYouBanner.className = 'alert alert-success mt-3';
+            thankYouBanner.innerHTML = '<strong>Thank you for your donation!</strong> We appreciate your support.';
+        
+            donateForm.addEventListener('submit', function (event) {
+              event.preventDefault();
+              // You can perform any necessary form submission logic here
+              // For now, just display the thank-you banner
+              donateForm.parentNode.insertBefore(thankYouBanner, donateForm.nextSibling);
+              donateForm.reset(); // Optional: Reset the form after submission
+            });
+          });
+        </script>
+
+        
       
         <div class="container-banner">
           <footer class="py-3 my-4">
@@ -599,6 +618,9 @@
 
 
 </div>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     </body>
