@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
   <head><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+    <script src="sign up page.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -100,7 +100,7 @@
     <!-- Custom styles for this template -->
     <link href="sign up page.css" rel="stylesheet">
   </head>
-  
+
   <body class="d-flex h-100 text-center text-bg-dark">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
@@ -204,7 +204,7 @@
         var bannerDiv = document.createElement("div");
         bannerDiv.className = "alert alert-success mt-3";
         bannerDiv.setAttribute("role", "alert");
-        bannerDiv.innerHTML = "<strong>Thank you for signing up!</strong> We appreciate your support, we will reach you as soon as possible.";
+        bannerDiv.textContent = "Thank you for signing up!</strong> We appreciate your support, we will reach you as soon as possible.";
 
         // Insert the banner after the form
         var form = document.querySelector("main form");
@@ -212,26 +212,29 @@
     }
 
     // Function to handle the form submission
-    function handleFormSubmission(event) {
-        event.preventDefault(); // Prevent the form from submitting (for demonstration purposes)
+function handleFormSubmission(event) {
+    // Validate the form fields
+    var fullName = document.getElementById("floatingFullName").value.trim();
+    var email = document.getElementById("floatingEmail").value.trim();
+    var password = document.getElementById("floatingPassword").value.trim();
 
-        // Validate the form fields
-        var fullName = document.getElementById("floatingFullName").value.trim();
-        var email = document.getElementById("floatingEmail").value.trim();
-        var password = document.getElementById("floatingPassword").value.trim();
-
-        // Check if any of the required fields is empty
-        if (fullName === "" || email === "" || password === "") {
-            alert("Please enter your information.");
-            return;
-        }
-
-        // Your form submission logic goes here
-
-        // Show the thank you banner
-        showThankYouBanner();
+    // Check if any of the required fields is empty
+    if (fullName === "" || email === "" || password === "") {
+        alert("Please enter your information.");
+        return;
     }
+
+    event.preventDefault(); // Prevent the form from submitting (for demonstration purposes)
+        
+    // Your form submission logic goes here
+
+    // Show the thank you banner
+    showThankYouBanner();
+}
+
 </script>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
