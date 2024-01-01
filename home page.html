@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
   <head><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-vAa0h1AL+g3hXDi1rI/5cPMKlxZ70+AxhU/Aj7M5p0sBsqQ8qIAg8hjRsL4L4hu4" crossorigin="anonymous"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -162,7 +163,7 @@
         <a class="nav-link fw-bold py-1 px-0" href="Donate page.html">Donate</a>
         <a class="nav-link fw-bold py-1 px-0" href="information page.html">Information</a>
         <a class="nav-link fw-bold py-1 px-0" href="volunteer page.html">Volunteer</a>
-        <a class="nav-link fw-bold py-1 px-0" href="sign in admin.html"> admin </a>
+        
         
       </nav>
     </div>
@@ -175,6 +176,29 @@
       <a href="Donate page.html" class="btn btn-lg btn-light fw-bold border-white bg-white">Donate here</a>
     </p>
   </main>
+
+
+  <script>
+    $(document).ready(function () {
+       $("#loadMoreBtn").click(function () {
+          // Perform an Ajax request to get additional information from the server
+          $.ajax({
+             url: "path/to/your/server/endpoint", // Replace with the actual server endpoint
+             method: "GET",
+             success: function (data) {
+                // Update the additionalInfo div with the received data
+                $("#additionalInfo").html(data);
+                // Show the additionalInfo div
+                $("#additionalInfo").removeClass("d-none");
+             },
+             error: function (error) {
+                console.error("Ajax request failed:", error);
+             }
+          });
+       });
+    });
+ </script>
+ 
 
   <div class="container-banner">
     <footer class="py-3 my-4">
