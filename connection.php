@@ -1,3 +1,5 @@
+<!-- connection.php -->
+
 <?php
 $host = "127.0.0.1";
 $username = "root";
@@ -10,44 +12,45 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get form data
-$email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) : '';
-
-if (!$email) {
-    echo "Invalid email address. Please enter a valid email.";
-    exit();
+// Common function to validate and sanitize email
+function validateEmail($email)
+{
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-// Perform SQL insertion for volunteerss table
-$sqlVolunteers = $conn->prepare("INSERT INTO volunteerss (email) VALUES (?)");
-$sqlVolunteers->bind_param("s", $email);
+// Check if form data is submitted for Volunteerss
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
+    $volunteerEmail = validateEmail($_POST['email']);
 
-// Check the result of the execution directly
-if ($sqlVolunteers->execute()) {
-    // Perform SQL insertion for donation_data table
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $address = $_POST['address'];
-    $address2 = $_POST['address2'];
-    $country = $_POST['country'];
-    $zip = $_POST['zip'];
+    if ($volunteerEmail) {
+        $sqlVolunteers = $conn->prepare("INSERT INTO volunteerss (email) VALUES (?)");
+        $sqlVolunteers->bind_param("s", $volunteerEmail);
 
-    $sqlDonation = $conn->prepare("INSERT INTO donations (first_name, last_name, email, address, address2, country, zip) 
-                                   VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $sqlDonation->bind_param("sssssss", $firstName, $lastName, $email, $address, $address2, $country, $zip);
+        if ($sqlVolunteers->execute()) {
+            echo "Volunteers record inserted successfully";
+        } else {
+            echo "Error: " . $sqlVolunteers->error;
+        }
 
-    if ($sqlDonation->execute()) {
-        echo "Records inserted successfully";
+        // Close the statement
+        $sqlVolunteers->close();
     } else {
-        echo "Error: " . $sqlDonation->error;
+        echo "Invalid email address for Volunteerss.";
     }
+}
 
-    // Close donation_data statement
-    $sqlDonation->close();
-} else {
-    // Log the error and provide feedback to the user.
-    error_log("Error: " . $sqlVolunteers->error, 0);
-    echo "Error processing your registration. Please try again later.";
+// Check if form data is submitted for Donations
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
+    $donorEmail = validateEmail($_POST['email']);
+
+    if ($donorEmail) {
+        // Include other donation fields and perform SQL insertion for donations table
+        // ...
+
+        echo "Donations record inserted successfully";
+    } else {
+        echo "Invalid email address for Donations.";
+    }
 }
 
 // Close the connection
