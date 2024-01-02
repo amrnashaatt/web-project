@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+$host = "127.0.0.1";
 $username = "root";
 $password = "";
 $database = "gaza donation";
@@ -22,6 +22,7 @@ if (!$email) {
 $sqlVolunteers = $conn->prepare("INSERT INTO volunteerss (email) VALUES (?)");
 $sqlVolunteers->bind_param("s", $email);
 
+// Check the result of the execution directly
 if ($sqlVolunteers->execute()) {
     // Perform SQL insertion for donation_data table
     $firstName = $_POST['firstName'];
