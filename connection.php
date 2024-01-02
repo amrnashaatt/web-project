@@ -18,7 +18,7 @@ $sql = "INSERT INTO volunteerss (email) VALUES ('$email')";
 
 if ($conn->query($sql) === TRUE) {
     // If the insertion is successful, redirect to a thank you page or display a success message.
-    header("Location: thank_you_page.php");
+    header("Location: sign up page.html");
     exit();
 } else {
     // Log the error and provide feedback to the user.
