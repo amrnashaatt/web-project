@@ -17,18 +17,23 @@
  */
 
  body {
-  margin: 0; /* Remove margin to cover the entire viewport */
-  font-family: 'Arial', sans-serif;
-  height: 100vh;
-  z-index: 1500;
-  padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    z-index: 1500;
+    padding: 0;
+    background: linear-gradient(45deg, #ffffff, #000000); /* Adjust gradient colors */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
   /* Adjust other styles as needed */
 }
 
 
 .cover-container {
-  max-width: 42em;
-}
+    max-width: 42em;
+  }
 
 
 /*
