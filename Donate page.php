@@ -198,6 +198,20 @@
             </div>
             <div class="col-md-7 col-lg-8">
               <h4 class="mb-3">Billing address</h4>
+              <!-- donate_page.html -->
+              <form action="connection.php" method="post">
+                <!-- Your form elements for donation -->
+                <!-- Example: -->
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+                
+                <!-- Other form fields -->
+        
+                <button type="submit">Submit</button>
+            </form>
+
+
+
               <form id="donate-form" class="needs-validation" novalidate>
                 <div class="row g-3">
                   <div class="col-sm-6">

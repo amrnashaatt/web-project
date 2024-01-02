@@ -180,12 +180,35 @@
     <!-- Add the action attribute to the form -->
 <form action="connection.php" method="post" onsubmit="handleFormSubmission(event);">
   <h1 class="h3 mb-3 fw-normal">Please register as a volunteer below</h1>
+  <!-- sign_up_page.html -->
+
+<form id="volunteers-form" action="connection.php" method="post" novalidate>
+  <!-- Include your input fields for volunteers -->
+  <label for="volunteer-email">Email:</label>
+  <input type="email" id="volunteer-email" name="email" required>
+
+  <!-- Other volunteer fields go here -->
+
+  <button type="submit">Submit</button>
+</form>
+
   <div class="form-floating">
       <input type="email" name="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
       <label for="floatingEmail">Email address</label>
   </div>
   <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
   <button class="btn btn-primary w-100 py-2" type="submit">register</button>
+</form>
+
+<form action="connection.php" method="post">
+  <!-- Your form elements for volunteer signup -->
+  <!-- Example: -->
+  <label for="email">Email:</label>
+  <input type="email" name="email" required>
+  
+  <!-- Other form fields -->
+
+  <button type="submit">Submit</button>
 </form>
 
 </main>
@@ -226,6 +249,7 @@ function handleFormSubmission(event) {
 
 
 
+
 </script>
 
 
@@ -244,8 +268,13 @@ function handleFormSubmission(event) {
   </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+<!-- Other HTML code -->
+
+<script src="sign up page.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
 
 </body>
 </html>
