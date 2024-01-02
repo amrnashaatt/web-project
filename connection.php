@@ -1,5 +1,3 @@
-<!-- connection.php -->
-
 <?php
 $host = "127.0.0.1";
 $username = "root";
@@ -19,8 +17,8 @@ function validateEmail($email)
 }
 
 // Check if form data is submitted for Volunteerss
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
-    $volunteerEmail = validateEmail($_POST['email']);
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['volunteer_email'])) {
+    $volunteerEmail = validateEmail($_POST['volunteer_email']);
 
     if ($volunteerEmail) {
         $sqlVolunteers = $conn->prepare("INSERT INTO volunteerss (email) VALUES (?)");
@@ -40,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
 }
 
 // Check if form data is submitted for Donations
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
-    $donorEmail = validateEmail($_POST['email']);
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donor_email'])) {
+    $donorEmail = validateEmail($_POST['donor_email']);
 
     if ($donorEmail) {
         // Include other donation fields and perform SQL insertion for donations table
