@@ -31,7 +31,7 @@ if ($sqlVolunteers->execute()) {
     $country = $_POST['country'];
     $zip = $_POST['zip'];
 
-    $sqlDonation = $conn->prepare("INSERT INTO donation_data (first_name, last_name, email, address, address2, country, zip) 
+    $sqlDonation = $conn->prepare("INSERT INTO donations (first_name, last_name, email, address, address2, country, zip) 
                                    VALUES (?, ?, ?, ?, ?, ?, ?)");
     $sqlDonation->bind_param("sssssss", $firstName, $lastName, $email, $address, $address2, $country, $zip);
 
