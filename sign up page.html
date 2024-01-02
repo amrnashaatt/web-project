@@ -190,7 +190,7 @@
   <button class="btn btn-primary w-100 py-2" type="submit">register</button>
 </form>
 
-<form action="connection.php" method="post">
+<form action="sign up page.html" method="post">
   <!-- Your form elements for volunteer signup -->
   <!-- Example: -->
   <label for="email">confirm Email address:</label>
@@ -225,6 +225,7 @@ function handleFormSubmission(event) {
 
     // Check if any of the required fields is empty
     if (email === "") {
+      haader("location: sign up page.html");
         alert("Please enter your information.");
         return;
     }
