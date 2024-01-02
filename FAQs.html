@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-vAa0h1AL+g3hXDi1rI/5cPMKlxZ70+AxhU/Aj7M5p0sBsqQ8qIAg8hjRsL4L4hu4" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.118.2">
+    <title>Gaza-donation</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/cover/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="FAQs page.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-bg-dark">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Gaza-donation</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="home page.html">Home</a>
+        <a class="nav-link fw-bold py-1 px-0" href="Donate page.html">Donate</a>
+        <a class="nav-link fw-bold py-1 px-0" href="information page.html">Information</a>
+        <a class="nav-link fw-bold py-1 px-0" href="volunteer page.html">Volunteer</a>
+        
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-3">
+    <h1><strong>FAQs</strong></h1>
+    <p class="lead"><main class="px-3">
+        <div class="faq-section">
+          <h1 class="mb-4"><strong>Frequently Asked Questions (FAQs)</strong></h1>
+          
+          <section class="faq-category">
+            <h2 class="mb-3"><strong>About Donations through Bank Accounts</strong></h2>
+            <p class="lead">
+              Thank you for supporting Gaza-donation. Your contributions assist and protect Palestine refugees. Here are the details for donating through bank accounts:
+            </p>
+          
+
+        DONATIONS THROUGH BANK ACCOUNTS 
+        CAN I DONATE THROUGH A BANK ACCOUNT?
+        Yes. You can donate through the following bank accounts: 
+        
+        Commercial International Bank (CIB)
+        
+        Account Name: United Nations Relief Amman Office
+        Account Number: 100047748938
+        Currency: EGP
+        Branch Name: Nova Park
+        Swift Code: CIBEEGCX055
+        IBAN No: EG590010005500000100047748938
+        Branch Address: Hotel four Seasons Garden City
+        Branch Code: 055
+        
+         
+        
+        Account Name: United Nations Relief Amman Office
+        Account Number: 100047748989
+        Currency: USD
+        Branch Name: Nova Park
+        Swift Code: CIBEEGCX055
+        IBAN No: EG400010005500000100047748989
+        Branch Address: Hotel four Seasons Garden City
+        Branch Code: 055
+        
+        Safwa Islamic Bank (For Zakat Donations)
+        
+        USD account details:
+        Bank Name: Safwa Islamic Bank
+        Account Name: United Nations Relief and Works Agency
+        Account Currency: USD
+        Account Number: 2320003458750023000000
+        IBAN: JO73JDIB2320003458750023000000
+        ​Swift Code: JDIBJOAM
+        
+        Branch Address: Mugablin, Alhoreya Street, Alnadeem Complex
+        PO.Box 1982, Amman 11118
+        Jordan  
+        
+         
+        
+        JOD account details:
+        
+        Bank Name: Safwa Islamic Bank
+        
+        Account Name: United Nations Relief and Works Agency
+        Account Currency: JOD
+        Account Number: 2320003458750013000000
+        IBAN: JO88JDIB2320003458750013000000
+        Swift Code: JDIBJOAM
+        
+        Branch Address: Mugablin, Alhoreya Street, Alnadeem ComplexPO.Box 1982, Amman 11118
+        Jordan  
+        
+        Arab Jordan Investment Bank
+        
+        West Amman Branch
+        Amman, Jordan
+        Beneficiary Name: UNRWA
+        Beneficiary Account No.: 022306028120020648000
+        Swift Code AJIBJOAX600 
+        IBAN No: JO18AJIB2230006028120020648000
+        
+        JP Morgan Chase, New York
+        International Agencies Banking 
+        277 Park Avenue, 23rd Floor 
+        New York, NY 10172, USA
+        UNRWA US Dollar Account Number: 949-1-092244 
+        ABA No.  021000021 
+        SWIFT Code: CHASUS33
+        
+        Bank of Palestine 
+        
+        Rimal Branch Gaza
+        Palestinian Territories
+        Beneficiary Name: UNRWA
+        Swift Code: PALSPS22
+        IBAN For USD: PS77 PALS 0454 0116 8890 0130 0000 0
+        IBAN for EUR:  PS82 PALS 0454 0116 8890 3330 0000 0
+        IBAN for NIS: PS62 PALS 0454 0116 8890 9930 0000 0
+        
+        Bank Austria 
+        Vienna International Center
+        A-1400 Wien, Wagramerstrasse 5
+        Vienna, Austria
+        EUR
+        UNRWA HQ-Gaza 
+        Account No. 00290 573 500
+        IBAN No. AT391100000290573500
+        BIC:BKAUATWW
+
+    </section>
+        
+        *Should you wish to receive a receipt or confirmation of your donation via bank transfers, checks or cash deposits to one of the UNRWA accounts listed above,  please write to us at Show Email ,  providing the following information: your name, donation amount , date of transfer /deposit and the bank you made the transfer to.
+        
+        <section class="faq-category">
+            <h2 class="mb-3"><strong>Targeted Donations</strong></h2>
+            <p class="lead">
+              Can I donate to a specific program or country? Learn about our approach to donations and explore options for contributing to core programs or emergency response operations.
+            </p>
+        
+
+        Donations to Gaza-donation can best be spent when Gaza-doanation is given the freedom to prioritise spending and allocate funds to programmes and countries that need it most. Experience has shown that restrictions on donations (such as tying them to a region, a programme, a project, a category of person, etc) limit our ability to operate flexibly and that this harms the people we are trying to help. It also involves additional administration. 
+        
+        UNRWA does however provide several options for donations at present, giving donors the flexibility to contribute to our core programmes or emergency response operations.
+        
+    </section>
+
+         <section class="faq-category">
+      <h2 class="mb-3"><strong>Credit Card and Online Donation FAQs</strong></h2>
+      <p class="lead">
+        Find answers to common questions about making online donations, supported currencies, credit card options, and online payment safety.
+      </p>
+         
+
+        HOW CAN I MAKE A DONATION IN A CURRENCY NOT SHOWN ON THE FORM?
+        For online donations, which are made by credit card, we can only accept Euro (EUR), pounds sterling (GBP), US dollars (USD) and Brazilian Real (BRL). Limiting the number of currencies for credit card donations helps us reduce administration costs. 
+        
+        WHAT CREDIT CARDS CAN I USE, AND FOR WHICH CURRENCIES?
+        We can take donations via MasterCard, Visa debit and Visa credit. MasterCard and Visa payments are possible in euro (EUR), pounds sterling (GBP), US dollars (USD) and Brazilian Real (BRL). Donations can also be made through PayPal. 
+        
+        CAN I MAKE A DONATION WITHOUT GIVING ANY PERSONAL DETAILS?
+        UNRWA takes great care to protect the personal data of its donors. Any personal data we record is kept confidential. We will not pass it on to anyone for commercial purposes. It is also important that you supply a valid email address in order for us to acknowledge your donation. Read our privacy policy.
+        
+        HOW CAN I BE CERTAIN THAT MY ONLINE PAYMENT IS SAFE?
+        UNRWA takes great care to keep the details you provide for credit card payments confidential. We use Stripe, which ensures an optimum level of security. To prevent fraud, your data is encrypted and then transmitted automatically and directly to the credit card issuer, who processes the payment. 
+        
+        HOW CAN I BE CERTAIN THAT THE SYSTEM HAS ACCEPTED MY PAYMENT?
+        If you have given a valid email address, you will receive an email acknowledging your donation about 15 minutes later. If you do not receive a confirmation email, you can contact us at donation@unrwa.org to request acknowledgement of your donation.
+        
+
+    </section>
+
+
+        <section class="faq-category">
+      <h2 class="mb-3"><strong>Tax Deductibility of Donations</strong></h2>
+      <p class="lead">
+        Learn about the tax deductibility of your donation and how to request an official receipt for tax purposes.
+      </p>
+        
+        IS MY DONATION TO UNRWA TAX-DEDUCTIBLE?
+        Donations made directly to UNRWA may not be tax deductible in your country of residence. Laws regarding contributions to United Nations agencies vary from country to country. Please contact your local tax advisor for guidelines on whether your gift is tax deductible. 
+        
+        You can request an official donation receipt by sending us an email at Show Email. Be sure to give us your full name as it appeared on your donation, your address, the date you made the donation and the amount. It is advisable however that you first contact your local tax advisor for guidelines on whether your gift is eligible and what information should be reflected on the receipt.
+        
+    </section>
+    
+    <section class="faq-category">
+        <h2 class="mb-3"><strong>Getting a Receipt</strong></h2>
+        <p class="lead">
+          Understand when to expect a receipt for your donation and what to do if you haven't received one.
+        </p>
+
+        WHEN CAN I EXPECT MY RECEIPT?
+        For a donation made through online: Once your donations goes through successfully you will receive 2 emails , one from world pay and the other from us confirming your donation.
+        
+        For a donation made by bank transfer , check , or cash deposit: in order to issue you a confirmation /receipt you need to write to us at Show Email with as much information about your donation as possible.
+        
+        I DONATED SEVERAL MONTHS AGO. WHY HAVEN'T I RECEIVED A RECEIPT? 
+        Please write to us at Show Email with as much information about your donation as possible. It is possible we had an incorrect email address for you. Be sure to give us your full name as it appeared on your donation, your address, the date you made the donation and the amount. Please include a phone number or email address so we can get in touch with you if we need to.
+        
+    </section>
+
+        <section class="faq-category">
+            <h2 class="mb-3"><strong>Using Your Donation</strong></h2>
+            <p class="lead">
+              Get insights into how your donation is utilized, UNRWA's financial transparency, and measures to ensure funds are used appropriately.
+            </p>
+
+        WHAT PERCENTAGE OF MY DONATION WILL GO DIRECTLY TO THOSE WHO NEED IT?
+        We are fully committed to ensuring that your contribution goes directly to supporting those who need it most. We work very hard to keep our administrative costs as low as possible. We are currently spending 11 per cent on administration. 
+        
+        HOW CAN I FIND OUT MORE ABOUT THE COST OF UNRWA’S WORK AND HOW IT IS FINANCED?
+        Please visit the how you can help page for more information about the cost of UNRWA’s work, how it is financed and who our biggest donors are.
+        
+        HOW DO I KNOW THAT MY MONEY WILL NOT END UP IN THE WRONG HANDS?
+        UNRWA has a tested system of checks and balances to ensure proper use of funds, including regular internal audits. Spending reports are also published for donors and the public and can be found in the resources section of our website.
+        
+        UNRWA has its own Department of Internal Oversight, charged with providing independent, professional and objective internal audit, inspection, investigation and consulting services. 
+        
+        UNRWA’s Commissioner-General is advised by the Advisory Committee on Internal Oversight which includes external members. The Agency is also audited by the independent UN Board of Auditors, which publishes its reports to the General Assembly. The Agency is bound by the principles of best practice of oversight that apply to the United Nations system as a whole.
+        
+        <section class="faq-category">
+      <h2 class="mb-3"><strong>Contacting the Fundraising Team</strong></h2>
+      <p class="lead">
+        Have questions about making a donation? Find out who to contact for assistance.
+      </p>
+
+        WHO CAN I CONTACT IF I HAVE QUESTIONS ABOUT MAKING A DONATION?</p>
+
+    </section>
+    
+  </main>
+
+ 
+
+  <div class="container-banner">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="home page.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="FAQs.html" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+        <li class="nav-item"><a href="information page.html" class="nav-link px-2 text-body-secondary">About</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">©2023 Gaza-donation, Inc</p>
+    </footer>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    </body>
+</html>
